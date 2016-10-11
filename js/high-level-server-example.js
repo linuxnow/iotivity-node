@@ -61,7 +61,7 @@ function handleError( theError ) {
 
 var lightResourceRequestHandlers = {
 	retrieve: function( request ) {
-		server.respond( request, null, request.target ).catch( handleError );
+		device.server.respond( request, null, request.target ).catch( handleError );
 		if ( "observe" in request ) {
 			observerCount += Math.max( 0, request.observe ? 1 : -1 );
 		}
