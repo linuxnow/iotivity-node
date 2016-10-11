@@ -9,7 +9,7 @@ var stderr = "";
 var stdout = "";
 
 var childArguments = [ "-e",
-		"try { require( '" + requirePath + "' )( 'server' ); } " +
+		"try { require( '" + requirePath + "' ); } " +
 		"catch( anError ) { " +
 			"console.error( anError.stack ); process.exit( 1 ); " +
 		"}" +
