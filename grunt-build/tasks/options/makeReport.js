@@ -12,17 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-module.exports = function( grunt ) {
-
-grunt.registerTask( "lint", [ "eslint" ] );
-
-grunt.registerTask( "default", [ "test" ] );
-
-grunt.registerTask( "test", [ "lint", "testsuite", "ocf-suite", "testdist" ] );
-
-grunt.registerTask( "format", [ "esformatter", "clangformat" ] );
-
-grunt.registerTask( "coverage",
-	[ "clean:coverage", "turn-on-coverage", "ocf-suite", "makeReport" ] );
-
+module.exports = {
+	src: "coverage/**/coverage*.json",
+	options: {
+		type: "lcov",
+		dir: "coverage",
+		print: "detail"
+	}
 };

@@ -32,13 +32,17 @@ grunt.task.registerTask( "ocf-suite", "Run the OCF test suite", function() {
 			done: ( function( originalDone ) {
 				return function() {
 					if ( originalDone ) {
-						return originalDone.apply( this, arguments );
+						originalDone.apply( this, arguments );
 					}
 					done();
 				};
 			} )( testSuite.defaultCallbacks.done )
 		} )
-	} )( _.extend( {
+	} )( _.extend( {},
+	( grunt.config.get( "interpreter" ) ? {
+		interpreter: grunt.config.get( "interpreter" )
+	} : {} ),
+	{
 		location: path.resolve( path.join( __dirname, "..", ".." ) )
 	}, grunt.option( "ocf-suites" ) ? {
 		tests: grunt.option( "ocf-suites" ).split( "," )
