@@ -25,4 +25,6 @@ grunt.registerTask( "format", [ "esformatter", "clangformat" ] );
 grunt.registerTask( "coverage",
 	[ "clean:coverage", "turn-on-coverage", "ocf-suite", "makeReport" ] );
 
+grunt.registerTask( "publish-coverage", [ "coverage", "coveralls" ] );
+
 };

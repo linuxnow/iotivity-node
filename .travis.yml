@@ -56,6 +56,10 @@ matrix:
     - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
       os: osx
 
+    - env: NODE_VERSION=4.5 TEST_SCRIPT=ci-coverage
+      os: linux
+      addons: *buildpackages
+
   allow_failures:
     - env: NODE_VERSION=0.12 TEST_SCRIPT=ci-basic
       os: osx
@@ -68,6 +72,10 @@ matrix:
 
     - env: NODE_VERSION=4.0 TEST_SCRIPT=ci
       os: osx
+
+    - env: NODE_VERSION=4.5 TEST_SCRIPT=ci-coverage
+      os: linux
+      addons: *buildpackages
 
 install:
 - >

@@ -14,6 +14,7 @@
     "ci": "TESTING=true npm install && grunt testsuite ocf-suite testdist --ci",
     "ci-basic": "TESTING=true npm install && grunt testsuite testdist --suites='Load Library.js' --ci",
     "ci-lint": "./dist.sh -r && grunt lint",
+    "ci-coverage": "TESTING=true npm install && grunt publish-coverage --ci",
     "test": "grunt test"
   },
   "gypfile": true,
@@ -31,6 +32,7 @@
     "glob": "^5.0.14",
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^1.0.0",
+    "grunt-coveralls": "^1.0.1",
     "grunt-esformatter": "^1.0.1",
     "grunt-eslint": "18.1.0",
     "grunt-istanbul": "^0.7.1",
